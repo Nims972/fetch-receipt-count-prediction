@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Count Form</title>
+    <!-- Add Bootstrap CSS link -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Bootstrap Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 0 8px 1px;background-color: #b4b5b6ad!important;">
+        <img src="{{ url_for('static', filename='Fetch_Secondary_Logo.png') }}" width="143" height="75">
+        <a class="navbar-brand" href="#">Receipt Count Form</a>
+    </nav>
+
+    <div class="container" style="margin: unset;">
+        <h2 class="mt-4">Receipt Count Form</h2>
+        <form id="receiptForm">
+            <div class="form-group">
+                <label for="startDate">Start Date:</label>
+                <input type="date" class="form-control" id="startDate" name="startDate" value="2022-01-01" required>
+            </div>
+
+            <div class="form-group">
+                <label for="receiptCounts">Receipt Count for 7 Days:</label>
+
+                <!-- Sliders for each day -->
+                <div id="sliders"></div>
+            </div>
+
+            <button type="button" class="btn btn-primary" id="submitBtn" onclick="submitForm()">Submit</button>
+
+            <!-- Result display section -->
+            <div id="result" class="text-success"></div>
+        </form>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
