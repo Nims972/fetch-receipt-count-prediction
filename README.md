@@ -34,6 +34,6 @@ I will quickly get into the steps and how to setup the code.
   - Building upon this for final prediction of next year
       a. using last 7 days of year 2021 to comeup with 1st day of 2022
       b. using last 6 days of year 2021 and then 1 day of year 2022 to comeup with 2nd day of 2022 and so on.
-  - this way populated whole year and displayed the monthly count of receipt in the nodebook.(check the last section)
+  - this way populated whole year and displayed the monthly count of receipt in the nodebook.(check the last section of fetch notebook)
 
     
