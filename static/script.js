@@ -68,7 +68,8 @@ function submitForm() {
     .then(response => response.json())
     .then(data => {
         // Display the result
-        document.getElementById('result').textContent = 'Result: ' + data.nextCount;
+        document.getElementById('result').textContent = 'Predicted Count of receipt for next day : ' + data.nextCount;
+        // document.getElementById('result').textContent = 'Predicted Count of next 30 days basis this week trend receipt : ' + data.nextMonth;
     })
     .catch(error => {
         console.error('Error:', error);

@@ -69,11 +69,12 @@ def submit_form():
     df=pd.DataFrame({'receipt_count':rcount,'date':dates})
     prepareData(df)
     df['month'] = df['month'] + 12
-    df['month'] = df['month'] + 12
-    df.loc[2:, 'weekofyear'] = df.loc[2:, 'weekofyear'] + 52
+    df['weekofyear'] = df['weekofyear'] + 52
+    print(df)
+    # df.loc[2:, 'weekofyear'] = df.loc[2:, 'weekofyear'] + 52
     sdf=scaler.transform(df)
     print(sdf)
-    print(df)
+
     eval_batch=np.array(sdf[:7])
     current_batch = eval_batch.reshape((1, 7, 6))
     print(current_batch)
@@ -82,7 +83,7 @@ def submit_form():
     sdf[7][0]=pred
     revdf=scaler.inverse_transform(sdf)
     print(revdf)
-    return jsonify({'message': 'Data received successfully','nextCount':revdf[-1][0]})
+    return jsonify({'message': 'Data received successfully','nextCount':round(revdf[-1][0])})
 
 if __name__ == '__main__':
     app.run(debug=True)
